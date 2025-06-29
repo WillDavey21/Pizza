@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Меню</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  
+  <header class="navbar">
+    <div class="logo">🍕 Піцца</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="menu.html">Меню</a></li>
+        <li><a class="order-btn" href="#cart">🛒 <span id="cart-count">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+ 
+  <section class="content">
+    <h2>🍕 Меню піц</h2>
+    <div class="menu-list">
+
+      <!-- Маргарита -->
+      <div class="pizza-item">
+        <img id="img-margarita" src="images.avif" alt="Маргарита" />
+        <p><strong>Маргарита</strong></p>
+        <p>Ціна: <span id="price-margarita">120</span> грн</p>
+
+        <label>Розмір:
+          <select onchange="updatePizza('margarita')" id="size-margarita">
+            <option value="120">Маленька</option>
+            <option value="150">Середня</option>
+            <option value="180">Велика</option>
+          </select>
+        </label>
+
+        <label class="extra-cheese">
+          <input type="checkbox" onchange="updatePizza('margarita')" id="extra-margarita" />
+          <span>З додатковим сиром</span>
+          <span class="price">(+20 грн)</span>
+        </label>
+
+        <button onclick="addCustomPizza('Маргарита')">Додати</button>
+      </div>
+
+      <!-- Пепероні -->
+      <div class="pizza-item">
+        <img id="img-peperoni" src="images.avif" alt="Пепероні" />
+        <p><strong>Пепероні</strong></p>
+        <p>Ціна: <span id="price-peperoni">140</span> грн</p>
+
+        <label>Розмір:
+          <select onchange="updatePizza('peperoni')" id="size-peperoni">
+            <option value="140">Маленька</option>
+            <option value="170">Середня</option>
+            <option value="200">Велика</option>
+          </select>
+        </label>
+
+        <label class="extra-cheese">
+          <input type="checkbox" onchange="updatePizza('peperoni')" id="extra-peperoni" />
+          <span>З додатковим сиром</span>
+          <span class="price">(+20 грн)</span>
+        </label>
+
+        <button onclick="addCustomPizza('Пепероні')">Додати</button>
+      </div>
+
+      <!-- Овочева -->
+      <div class="pizza-item">
+        <img id="img-veggie" src="images.avif" alt="Овочева" />
+        <p><strong>Овочева</strong></p>
+        <p>Ціна: <span id="price-veggie">130</span> грн</p>
+
+        <label>Розмір:
+          <select onchange="updatePizza('veggie')" id="size-veggie">
+            <option value="130">Маленька</option>
+            <option value="160">Середня</option>
+            <option value="190">Велика</option>
+          </select>
+        </label>
+
+        <label class="extra-cheese">
+          <input type="checkbox" onchange="updatePizza('veggie')" id="extra-veggie" />
+          <span>З додатковим сиром</span>
+          <span class="price">(+20 грн)</span>
+        </label>
+
+        <button onclick="addCustomPizza('Овочева')">Додати</button>
+      </div>
+
+      <!-- Грибна -->
+      <div class="pizza-item">
+        <img id="img-mushroom" src="images.avif" alt="Грибна" />
+        <p><strong>Грибна</strong></p>
+        <p>Ціна: <span id="price-mushroom">135</span> грн</p>
+
+        <label>Розмір:
+          <select onchange="updatePizza('mushroom')" id="size-mushroom">
+            <option value="135">Маленька</option>
+            <option value="165">Середня</option>
+            <option value="195">Велика</option>
+          </select>
+        </label>
+
+        <label class="extra-cheese">
+          <input type="checkbox" onchange="updatePizza('mushroom')" id="extra-mushroom" />
+          <span>З додатковим сиром</span>
+          <span class="price">(+20 грн)</span>
+        </label>
+
+        <button onclick="addCustomPizza('Грибна')">Додати</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Кошик -->
+  <section id="cart" class="content">
+    <h2>🛒 Кошик</h2>
+    <div id="cart-items"></div>
+    <p><strong>Загальна сума: <span id="total">0</span> грн</strong></p>
+  </section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
