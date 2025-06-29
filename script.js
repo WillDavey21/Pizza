@@ -36,7 +36,15 @@ function updatePizza(id) {
 }
 
 function addCustomPizza(name) {
-  const id = name.toLowerCase().replace(' ', '')
+  
+  const nameToId = {
+    'Маргарита': 'margarita',
+    'Пепероні': 'peperoni',
+    'Овочева': 'veggie',
+    'Грибна': 'mushroom'
+  }
+
+  const id = nameToId[name]
   const sizeInput = document.querySelector(`#size-${id}`)
   const extraCheckbox = document.querySelector(`#extra-${id}`)
 
@@ -55,4 +63,9 @@ function addCustomPizza(name) {
   alert(`${fullName} додано до кошика!`)
 }
 
-document.querySelector('body').addEventListener('DOMContentLoaded', updateCartUI)
+function clearCart() {
+  cart = []
+  updateCartUI()
+}
+
+document.addEventListener('DOMContentLoaded', updateCartUI)
