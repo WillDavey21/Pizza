@@ -13,17 +13,17 @@
       <ul>
         <li><a href="index.html">Головна</a></li>
         <li><a href="menu.html">Меню</a></li>
-        <li><a class="order-btn" href="cart.html">🛒 <span id="cart-count">0</span></a></li>
+        <li><a class="btn-cart" href="cart.html">🛒 <span id="count-cart">0</span></a></li>
       </ul>
     </nav>
   </header>
 
   <section class="content">
     <h2>🍕 Меню піц</h2>
-    <div class="menu-list">
+    <div class="pizzas">
 
       <!-- Маргарита -->
-      <div class="pizza-item">
+      <div class="pizza">
         <img id="img-margarita" src="images.avif" alt="Маргарита" />
         <p><strong>Маргарита</strong></p>
         <p>Ціна: <span id="price-margarita">120</span> грн</p>
@@ -36,17 +36,17 @@
           </select>
         </label>
 
-        <label class="extra-cheese">
+        <label class="cheese">
           <input type="checkbox" onchange="updatePizza('margarita')" id="extra-margarita" />
           <span>З додатковим сиром</span>
-          <span class="price">(+20 грн)</span>
+          <span class="cheese-price">(+20 грн)</span>
         </label>
 
         <button onclick="addCustomPizza('Маргарита')">Додати</button>
       </div>
 
       <!-- Пепероні -->
-      <div class="pizza-item">
+      <div class="pizza">
         <img id="img-peperoni" src="images.avif" alt="Пепероні" />
         <p><strong>Пепероні</strong></p>
         <p>Ціна: <span id="price-peperoni">140</span> грн</p>
@@ -59,17 +59,17 @@
           </select>
         </label>
 
-        <label class="extra-cheese">
+        <label class="cheese">
           <input type="checkbox" onchange="updatePizza('peperoni')" id="extra-peperoni" />
           <span>З додатковим сиром</span>
-          <span class="price">(+20 грн)</span>
+          <span class="cheese-price">(+20 грн)</span>
         </label>
 
         <button onclick="addCustomPizza('Пепероні')">Додати</button>
       </div>
 
       <!-- Овочева -->
-      <div class="pizza-item">
+      <div class="pizza">
         <img id="img-veggie" src="images.avif" alt="Овочева" />
         <p><strong>Овочева</strong></p>
         <p>Ціна: <span id="price-veggie">130</span> грн</p>
@@ -82,17 +82,17 @@
           </select>
         </label>
 
-        <label class="extra-cheese">
+        <label class="cheese">
           <input type="checkbox" onchange="updatePizza('veggie')" id="extra-veggie" />
           <span>З додатковим сиром</span>
-          <span class="price">(+20 грн)</span>
+          <span class="cheese-price">(+20 грн)</span>
         </label>
 
         <button onclick="addCustomPizza('Овочева')">Додати</button>
       </div>
 
       <!-- Грибна -->
-      <div class="pizza-item">
+      <div class="pizza">
         <img id="img-mushroom" src="images.avif" alt="Грибна" />
         <p><strong>Грибна</strong></p>
         <p>Ціна: <span id="price-mushroom">135</span> грн</p>
@@ -105,10 +105,10 @@
           </select>
         </label>
 
-        <label class="extra-cheese">
+        <label class="cheese">
           <input type="checkbox" onchange="updatePizza('mushroom')" id="extra-mushroom" />
           <span>З додатковим сиром</span>
-          <span class="price">(+20 грн)</span>
+          <span class="cheese-price">(+20 грн)</span>
         </label>
 
         <button onclick="addCustomPizza('Грибна')">Додати</button>
@@ -117,13 +117,11 @@
     </div>
   </section>
 
-  <!-- Кошик -->
-  <section id="cart" class="content">
+  <section class="content">
     <h2>🛒 Кошик</h2>
-    <div id="cart-items"></div>
-    <p><strong>Загальна сума: <span id="total">0</span> грн</strong></p>
+    <div id="items-cart"></div>
+    <p><strong>Загальна сума: <span id="sum-total">0</span> грн</strong></p>
   </section>
-
 
   <script src="script.js"></script>
 </body>
