@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <title>Кошик</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">🍕 Піцца</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Головна</a></li>
+        <li><a href="menu.html">Меню</a></li>
+        <li><a class="order-btn" href="cart.html">🛒 <span id="cart-count">0</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content">
+    <h2>🛒 Ваше замовлення</h2>
+    <div id="cart-items"></div>
+    <p><strong>Загальна сума: <span id="total">0</span> грн</strong></p>
+
+    <h3>🚚 Інформація для доставки</h3>
+    <form id="order-form" novalidate>
+
+      <label>Ім’я:<br>
+        <input type="text" id="first-name" pattern="[А-Яа-яЁёЇїІіЄєҐґA-Za-z\s]{2,}" required />
+      </label><br><br>
+
+      <label>Прізвище:<br>
+        <input type="text" id="last-name" pattern="[А-Яа-яA-Za-z\s]{2,}" required />
+      </label><br><br>
+
+      <label>Email:<br>
+        <input type="email" id="email" required />
+      </label><br><br>
+
+      <label>Телефон:<br>
+        <input type="tel" id="phone" pattern="\d{9,}" required />
+      </label><br><br>
+
+      <label>Вулиця:<br>
+        <input type="text" id="street" pattern="[А-Яа-яA-Za-z0-9\s\-\.]{2,}" required />
+      </label><br><br>
+
+      <label>Будинок:<br>
+        <input type="text" id="house" pattern="\d+[А-Яа-яA-Za-z]?" required />
+      </label><br><br>
+
+      <label>Квартира:<br>
+        <input type="text" id="flat" pattern="\d{1,4}" required />
+      </label><br><br>
+
+      <label>Коментар до замовлення:<br>
+        <textarea id="comment" rows="3"></textarea>
+      </label><br><br>
+
+      <button type="submit">Оформити замовлення</button>
+    </form>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
