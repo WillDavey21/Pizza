@@ -6,123 +6,116 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
+
   <header class="navbar">
     <div class="logo">🍕 Піцца</div>
     <nav>
       <ul>
         <li><a href="index.html">Головна</a></li>
         <li><a href="menu.html">Меню</a></li>
-        <li><a class="btn-cart" href="cart.html">🛒 <span id="count-cart">0</span></a></li>
+        <li><a class="btn-cart" href="cart.html">🛒 <span id="cart-count">0</span></a></li>
       </ul>
     </nav>
   </header>
 
   <section class="content">
-    <h2>🍕 Меню піц</h2>
-    <div class="pizzas">
+    <h2>🍕 Наше меню</h2>
+    <div class="menu-row scrollable">
 
-      <!-- Маргарита -->
       <div class="pizza">
-        <img id="img-margarita" src="images.avif" alt="Маргарита" />
+        <img src="images/Маргарита.jpg" alt="Маргарита" />
         <p><strong>Маргарита</strong></p>
+        <select id="size-margarita" onchange="updatePizza('margarita')">
+          <option value="120">Маленька</option>
+          <option value="150">Середня</option>
+          <option value="180">Велика</option>
+        </select>
+        <label>
+          <input type="checkbox" id="extra-margarita" onchange="updatePizza('margarita')"> Дод. сир (+20 грн)
+        </label>
         <p>Ціна: <span id="price-margarita">120</span> грн</p>
-
-        <label>Розмір:
-          <select onchange="updatePizza('margarita')" id="size-margarita">
-            <option value="120">Маленька</option>
-            <option value="150">Середня</option>
-            <option value="180">Велика</option>
-          </select>
-        </label>
-
-        <label class="cheese">
-          <input type="checkbox" onchange="updatePizza('margarita')" id="extra-margarita" />
-          <span>З додатковим сиром</span>
-          <span class="cheese-price">(+20 грн)</span>
-        </label>
-
         <button onclick="addCustomPizza('Маргарита')">Додати</button>
       </div>
 
-      <!-- Пепероні -->
       <div class="pizza">
-        <img id="img-peperoni" src="images.avif" alt="Пепероні" />
+        <img src="images/Пепероні.jpg" alt="Пепероні" />
         <p><strong>Пепероні</strong></p>
+        <select id="size-peperoni" onchange="updatePizza('peperoni')">
+          <option value="140">Маленька</option>
+          <option value="170">Середня</option>
+          <option value="200">Велика</option>
+        </select>
+        <label>
+          <input type="checkbox" id="extra-peperoni" onchange="updatePizza('peperoni')"> Дод. сир (+20 грн)
+        </label>
         <p>Ціна: <span id="price-peperoni">140</span> грн</p>
-
-        <label>Розмір:
-          <select onchange="updatePizza('peperoni')" id="size-peperoni">
-            <option value="140">Маленька</option>
-            <option value="170">Середня</option>
-            <option value="200">Велика</option>
-          </select>
-        </label>
-
-        <label class="cheese">
-          <input type="checkbox" onchange="updatePizza('peperoni')" id="extra-peperoni" />
-          <span>З додатковим сиром</span>
-          <span class="cheese-price">(+20 грн)</span>
-        </label>
-
         <button onclick="addCustomPizza('Пепероні')">Додати</button>
       </div>
 
-      <!-- Овочева -->
       <div class="pizza">
-        <img id="img-veggie" src="images.avif" alt="Овочева" />
+        <img src="images/Грибна.jfif" alt="Грибна" />
+        <p><strong>Грибна</strong></p>
+        <select id="size-mushroom" onchange="updatePizza('mushroom')">
+          <option value="130">Маленька</option>
+          <option value="160">Середня</option>
+          <option value="190">Велика</option>
+        </select>
+        <label>
+          <input type="checkbox" id="extra-mushroom" onchange="updatePizza('mushroom')"> Дод. сир (+20 грн)
+        </label>
+        <p>Ціна: <span id="price-mushroom">130</span> грн</p>
+        <button onclick="addCustomPizza('Грибна')">Додати</button>
+      </div>
+
+      <div class="pizza">
+        <img src="images/Овочева.jfif" alt="Овочева" />
         <p><strong>Овочева</strong></p>
-        <p>Ціна: <span id="price-veggie">130</span> грн</p>
-
-        <label>Розмір:
-          <select onchange="updatePizza('veggie')" id="size-veggie">
-            <option value="130">Маленька</option>
-            <option value="160">Середня</option>
-            <option value="190">Велика</option>
-          </select>
+        <select id="size-veggie" onchange="updatePizza('veggie')">
+          <option value="125">Маленька</option>
+          <option value="155">Середня</option>
+          <option value="185">Велика</option>
+        </select>
+        <label>
+          <input type="checkbox" id="extra-veggie" onchange="updatePizza('veggie')"> Дод. сир (+20 грн)
         </label>
-
-        <label class="cheese">
-          <input type="checkbox" onchange="updatePizza('veggie')" id="extra-veggie" />
-          <span>З додатковим сиром</span>
-          <span class="cheese-price">(+20 грн)</span>
-        </label>
-
+        <p>Ціна: <span id="price-veggie">125</span> грн</p>
         <button onclick="addCustomPizza('Овочева')">Додати</button>
       </div>
 
-      <!-- Грибна -->
       <div class="pizza">
-        <img id="img-mushroom" src="images.avif" alt="Грибна" />
-        <p><strong>Грибна</strong></p>
-        <p>Ціна: <span id="price-mushroom">135</span> грн</p>
-
-        <label>Розмір:
-          <select onchange="updatePizza('mushroom')" id="size-mushroom">
-            <option value="135">Маленька</option>
-            <option value="165">Середня</option>
-            <option value="195">Велика</option>
-          </select>
+        <img src="images/Гавайська.jpeg" alt="Гавайська" />
+        <p><strong>Гавайська</strong></p>
+        <select id="size-hawaii" onchange="updatePizza('hawaii')">
+          <option value="135">Маленька</option>
+          <option value="165">Середня</option>
+          <option value="195">Велика</option>
+        </select>
+        <label>
+          <input type="checkbox" id="extra-hawaii" onchange="updatePizza('hawaii')"> Дод. сир (+20 грн)
         </label>
+        <p>Ціна: <span id="price-hawaii">135</span> грн</p>
+        <button onclick="addCustomPizza('Гавайська')">Додати</button>
+      </div>
 
-        <label class="cheese">
-          <input type="checkbox" onchange="updatePizza('mushroom')" id="extra-mushroom" />
-          <span>З додатковим сиром</span>
-          <span class="cheese-price">(+20 грн)</span>
+      <div class="pizza">
+        <img src="images/4сира.avif" alt="4 сири" />
+        <p><strong>4 сири</strong></p>
+        <select id="size-cheese" onchange="updatePizza('cheese')">
+          <option value="150">Маленька</option>
+          <option value="180">Середня</option>
+          <option value="210">Велика</option>
+        </select>
+        <label>
+          <input type="checkbox" id="extra-cheese" onchange="updatePizza('cheese')"> Дод. сир (+20 грн)
         </label>
-
-        <button onclick="addCustomPizza('Грибна')">Додати</button>
+        <p>Ціна: <span id="price-cheese">150</span> грн</p>
+        <button onclick="addCustomPizza('4 сири')">Додати</button>
       </div>
 
     </div>
   </section>
 
-  <section class="content">
-    <h2>🛒 Кошик</h2>
-    <div id="items-cart"></div>
-    <p><strong>Загальна сума: <span id="sum-total">0</span> грн</strong></p>
-  </section>
-
   <script src="script.js"></script>
 </body>
 </html>
+
